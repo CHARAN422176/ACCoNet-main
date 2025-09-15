@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
+import imageio
 
-import numpy as np
 import pdb, os, argparse
 from scipy import misc
 import time
@@ -56,7 +56,8 @@ for dataset in test_datasets:
         res = F.upsample(res, size=gt.shape, mode='bilinear', align_corners=False)
         res = res.sigmoid().data.cpu().numpy().squeeze()
         res = (res - res.min()) / (res.max() - res.min() + 1e-8)
-        misc.imsave(save_path+name, res)
+        # misc.imsave(save_path+name, res)
+        imageio.imwrite(save_path + name, (res * 255).astype(np.uint8))
         if i == test_loader.size-1:
             print('Running time {:.5f}'.format(time_sum/test_loader.size))
             print('Average speed: {:.4f} fps'.format(test_loader.size/time_sum))
