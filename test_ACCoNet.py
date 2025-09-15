@@ -9,7 +9,6 @@ import time
 from model.ACCoNet_VGG_models import ACCoNet_VGG
 from model.ACCoNet_Res_models import ACCoNet_Res
 from data import test_dataset
-sys.path.append(os.path.join(os.getcwd(), "model"))
 torch.cuda.set_device(0)
 parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=256, help='testing size')

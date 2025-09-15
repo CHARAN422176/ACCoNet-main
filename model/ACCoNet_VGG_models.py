@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+sys.path.append(os.path.join(os.getcwd(), "model"))
 from vgg import VGG
 
 class BasicConv2d(nn.Module):
