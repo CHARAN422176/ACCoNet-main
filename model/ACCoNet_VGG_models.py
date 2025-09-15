@@ -1,10 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import os
-import sys
-sys.path.append(os.path.join(os.getcwd(), "model"))
-from vgg import VGG
+from .vgg import VGG
 
 class BasicConv2d(nn.Module):
     def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, dilation=1):
