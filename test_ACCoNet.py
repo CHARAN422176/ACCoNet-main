@@ -12,7 +12,7 @@ from data import test_dataset
 torch.cuda.set_device(0)
 parser = argparse.ArgumentParser()
 parser.add_argument('--testsize', type=int, default=256, help='testing size')
-parser.add_argument('--is_ResNet', type=bool, default=True, help='VGG or ResNet backbone')
+parser.add_argument('--is_ResNet', type=bool, default=False, help='VGG or ResNet backbone')
 opt = parser.parse_args()
 
 dataset_path = './dataset/test_dataset/'
@@ -22,7 +22,7 @@ if opt.is_ResNet:
     model.load_state_dict(torch.load('./models/ACCoNet_ResNet/ACCoNet_Res.pth.39'))
 else:
     model = ACCoNet_VGG()
-    model.load_state_dict(torch.load('./models/ACCoNet_VGG/ACCoNet_VGG.pth.54'))
+    model.load_state_dict(torch.load('/kaggle/input/acconet/pytorch/default/1/EORSSD_ACCoNet_VGG.pth.39'))
 
 model.cuda()
 model.eval()
