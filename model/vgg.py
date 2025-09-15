@@ -65,7 +65,7 @@ class VGG(nn.Module):
         conv5.add_module('relu5_3', nn.ReLU())
         self.conv5 = conv5
 
-        pre_train = torch.load('/home/lgy/20210206_ORSI_SOD/model/vgg16-397923af.pth')
+        pre_train = torch.load('/kaggle/input/acconet/pytorch/default/2/vgg16-397923af.pth')
         self._initialize_weights(pre_train)
 
     def forward(self, x):
