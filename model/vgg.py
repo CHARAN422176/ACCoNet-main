@@ -78,7 +78,8 @@ class VGG(nn.Module):
         return x
 
     def _initialize_weights(self, pre_train):
-        keys = pre_train.keys()
+        # keys = pre_train.keys()
+        keys = list(pre_train.keys())
 
         self.conv1.conv1_1.weight.data.copy_(pre_train[keys[0]])
         self.conv1.conv1_2.weight.data.copy_(pre_train[keys[2]])
