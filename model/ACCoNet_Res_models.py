@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from ResNet50 import Backbone_ResNet50_in3
+from .ResNet50 import Backbone_ResNet50_in3
 
 
 class BasicConv2d(nn.Module):
